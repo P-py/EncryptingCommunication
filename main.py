@@ -14,12 +14,13 @@ def generate_new_salt():
     saltStringVar = StringVar()
     saltStringVar.set(salt)
     saltWindow = Toplevel()
-    saltWindow.configure()
+    saltWindow.configure(bg="#282830")
     saltWindow.title("Your salt")
-    saltWindow.geometry("600x300")
-    l1 = Label(saltWindow, font="Helvetica 20 bold italic")
-    e1 = Entry(saltWindow, font="Helvetica 20 bold italic", bd=0, state="readonly", textvariable=saltStringVar, justify="center")
+    saltWindow.geometry("900x300")
+    l1 = Label(saltWindow, font="Helvetica 20 bold italic", bg="#282830", fg="#e92d2d", text="Copy just the text inside, without those ' and the b")
+    e1 = Entry(saltWindow, bg="#282830", fg="#e92d2d", font="Helvetica 15 bold italic", bd=0, state="readonly", textvariable=saltStringVar, justify="center")
     e1.place(rely=.5, relx=.5, anchor=CENTER, relwidth=1.0)
+    l1.place(rely=.3, relx=.5, anchor=CENTER)
 
 #Configuring root
 root = Tk()
