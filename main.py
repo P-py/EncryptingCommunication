@@ -42,8 +42,10 @@ def continue_with_salt():
     def encrypt():
         salt_input = encryptE1.get()
         Mpassword_input = encryptE2.get()
+        message_input = encryptE3.get()
         salt = salt_input.encode()
         password = Mpassword_input.encode()
+        message = message_input.encode()
         kdf = PBKDF2HMAC (
         algorithm=hashes.SHA256(),
         length=32,
@@ -54,7 +56,9 @@ def continue_with_salt():
         print(password)
         key = base64.urlsafe_b64encode(kdf.derive(password))
         print(key)
-
+        f = Fernet(key)
+        token = f.encrypt(message)
+        print(token)
     encrypyB1 = Button(window1, bg="#282830", font="Helvetica 20 bold italic", relief=GROOVE, borderwidth=2, fg="#e92d2d", text="Encrypt", command=encrypt)
     encrypyB1.place(rely=.9, relx=.5, anchor=CENTER)
 
