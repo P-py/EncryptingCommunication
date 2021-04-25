@@ -30,7 +30,15 @@ def continue_with_salt():
     encryptL1 = Label(window1, font="Helvetica 20 bold italic", bg="#282830", fg="#e92d2d", text="Insert your salt below:")
     encryptE1 = Entry(window1, bg="#282830", fg="#e92d2d", font="Helvetica 15 bold italic", bd=0)
     encryptL2 = Label(window1, font="Helvetica 20 bold italic", bg="#282830", fg="#e92d2", text="Insert your master password below:")
-    
+    encyrptE2 = Entry(window1, bg="#282830", fg="e92d2d", font="Helvetica 15 bold italic", bd=0)
+
+def encyrpt():
+    kdf = PBKDF2HMAC (
+    algorithm=hashes.SHA256(),
+    length=32,
+    salt=salt,
+    iterations=100000
+    )
 
 #Configuring root
 root = Tk()
