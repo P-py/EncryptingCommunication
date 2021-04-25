@@ -32,10 +32,13 @@ def continue_with_salt():
     encryptL2 = Label(window1, font="Helvetica 20 bold italic", bg="#282830", fg="#e92d2d", text="Insert your master password below:")
     encryptE2 = Entry(window1, fg="#e92d2d", font="Helvetica 15 bold italic", bd=0)
     encryptL3 = Label(window1, font="Helvetica 20 bold italic", bg="#282830", fg="#e92d2d", text="Message to encrypt:")
+    encryptE3 = Entry(window1, fg="#e92d2d", font="Helvetica 15 bold italic", bd=0)
     encryptL1.place(rely=.2, relx=.5, anchor=CENTER)
-    encryptE1.place(rely=.35, relx=.5, anchor=CENTER)
-    encryptL2.place(rely=.5, relx=.5, anchor=CENTER)
-    encryptE2.place(rely=.65, relx=.5, anchor=CENTER)
+    encryptE1.place(rely=.3, relx=.5, anchor=CENTER)
+    encryptL2.place(rely=.4, relx=.5, anchor=CENTER)
+    encryptE2.place(rely=.5, relx=.5, anchor=CENTER)
+    encryptL3.place(rely=.6, relx=.5, anchor=CENTER)
+    encryptE3.place(rely=.7, relx=.5, anchor=CENTER)
     def encrypt():
         salt_input = encryptE1.get()
         Mpassword_input = encryptE2.get()
@@ -49,8 +52,11 @@ def continue_with_salt():
         )
         print(salt)
         print(password)
+        key = base64.urlsafe_b64encode(kdf.derive(password))
+        print(key)
+
     encrypyB1 = Button(window1, bg="#282830", font="Helvetica 20 bold italic", relief=GROOVE, borderwidth=2, fg="#e92d2d", text="Encrypt", command=encrypt)
-    encrypyB1.place(rely=.8, relx=.5, anchor=CENTER)
+    encrypyB1.place(rely=.9, relx=.5, anchor=CENTER)
 
 #Configuring root
 root = Tk()
