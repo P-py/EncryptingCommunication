@@ -31,9 +31,9 @@ root.configure(bg="#282830")
 #Adding the widgets
 Canva1 = Canvas(root, bg="#282830")
 b1Label = Label(Canva1, bg="#282830", text="If you don't yet have a salt click here", fg="#eee", font="Helvetica 17 bold italic")
-b1 = Button(Canva1, bg="#303030", relief=GROOVE, borderwidth=2, text="Generate new salt, then continue", font="Helvetica 15 bold italic", fg="#eee")
+b1 = Button(Canva1, bg="#303030", relief=GROOVE, borderwidth=2, text="Generate new salt, then continue", font="Helvetica 15 bold italic", fg="#eee", command=generate_new_salt)
 b2Label = Label(Canva1, bg="#282830", text="In the case you already have a salt, then click here", font="Helvetica 17 bold italic", fg="#eee")
-b2 = Button(Canva1, bg="#303030", relief=GROOVE, borderwidth=2, font="Helvetica 15 bold italic", fg="#eee", text="Continue", command=generate_new_salt)
+b2 = Button(Canva1, bg="#303030", relief=GROOVE, borderwidth=2, font="Helvetica 15 bold italic", fg="#eee", text="Continue")
 
 #Placing everything
 Canva1.place(relwidth=1.0, relheight=1.0)
