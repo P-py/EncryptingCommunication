@@ -28,17 +28,29 @@ def continue_with_salt():
     window1.title("Safe communication encrypted P2P")
     window1.geometry("800x500")
     encryptL1 = Label(window1, font="Helvetica 20 bold italic", bg="#282830", fg="#e92d2d", text="Insert your salt below:")
-    encryptE1 = Entry(window1, bg="#282830", fg="#e92d2d", font="Helvetica 15 bold italic", bd=0)
-    encryptL2 = Label(window1, font="Helvetica 20 bold italic", bg="#282830", fg="#e92d2", text="Insert your master password below:")
-    encyrptE2 = Entry(window1, bg="#282830", fg="e92d2d", font="Helvetica 15 bold italic", bd=0)
-
-def encyrpt():
-    kdf = PBKDF2HMAC (
-    algorithm=hashes.SHA256(),
-    length=32,
-    salt=salt,
-    iterations=100000
-    )
+    encryptE1 = Entry(window1, fg="#e92d2d", font="Helvetica 15 bold italic", bd=0)
+    encryptL2 = Label(window1, font="Helvetica 20 bold italic", bg="#282830", fg="#e92d2d", text="Insert your master password below:")
+    encryptE2 = Entry(window1, fg="#e92d2d", font="Helvetica 15 bold italic", bd=0)
+    encryptL3 = Label(window1, font="Helvetica 20 bold italic", bg="#282830", fg="#e92d2d", text="Message to encrypt:")
+    encryptL1.place(rely=.2, relx=.5, anchor=CENTER)
+    encryptE1.place(rely=.35, relx=.5, anchor=CENTER)
+    encryptL2.place(rely=.5, relx=.5, anchor=CENTER)
+    encryptE2.place(rely=.65, relx=.5, anchor=CENTER)
+    def encrypt():
+        salt_input = encryptE1.get()
+        Mpassword_input = encryptE2.get()
+        salt = salt_input.encode()
+        password = Mpassword_input.encode()
+        kdf = PBKDF2HMAC (
+        algorithm=hashes.SHA256(),
+        length=32,
+        salt=salt,
+        iterations=100000
+        )
+        print(salt)
+        print(password)
+    encrypyB1 = Button(window1, bg="#282830", font="Helvetica 20 bold italic", relief=GROOVE, borderwidth=2, fg="#e92d2d", text="Encrypt", command=encrypt)
+    encrypyB1.place(rely=.8, relx=.5, anchor=CENTER)
 
 #Configuring root
 root = Tk()
