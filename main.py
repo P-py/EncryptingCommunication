@@ -22,6 +22,16 @@ def generate_new_salt():
     e1.place(rely=.5, relx=.5, anchor=CENTER, relwidth=1.0)
     l1.place(rely=.3, relx=.5, anchor=CENTER)
 
+def continue_with_salt():
+    window1 = Toplevel()
+    window1.configure(bg="#282830")
+    window1.title("Safe communication encrypted P2P")
+    window1.geometry("800x500")
+    encryptL1 = Label(window1, font="Helvetica 20 bold italic", bg="#282830", fg="#e92d2d", text="Insert your salt below:")
+    encryptE1 = Entry(window1, bg="#282830", fg="#e92d2d", font="Helvetica 15 bold italic", bd=0)
+    encryptL2 = Label(window1, font="Helvetica 20 bold italic", bg="#282830", fg="#e92d2", text="Insert your master password below:")
+    
+
 #Configuring root
 root = Tk()
 root.title("Safe communication encrypted P2P")
@@ -33,7 +43,7 @@ Canva1 = Canvas(root, bg="#282830")
 b1Label = Label(Canva1, bg="#282830", text="If you don't yet have a salt click here", fg="#eee", font="Helvetica 17 bold italic")
 b1 = Button(Canva1, bg="#303030", relief=GROOVE, borderwidth=2, text="Generate new salt, then continue", font="Helvetica 15 bold italic", fg="#eee", command=generate_new_salt)
 b2Label = Label(Canva1, bg="#282830", text="In the case you already have a salt, then click here", font="Helvetica 17 bold italic", fg="#eee")
-b2 = Button(Canva1, bg="#303030", relief=GROOVE, borderwidth=2, font="Helvetica 15 bold italic", fg="#eee", text="Continue")
+b2 = Button(Canva1, bg="#303030", relief=GROOVE, borderwidth=2, font="Helvetica 15 bold italic", fg="#eee", text="Continue", command=continue_with_salt)
 
 #Placing everything
 Canva1.place(relwidth=1.0, relheight=1.0)
