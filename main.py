@@ -67,7 +67,7 @@ def continue_with_salt():
             #print(token)
             window_encrypted = Toplevel()
             window_encrypted.configure(bg='#282830')
-            encrypted_message = Text(window_encrypted)
+            encrypted_message = Text(window_encrypted, bg='#282830', font='Helvetica 20 bold italic', fg='#e92d2d')
             encrypted_message.pack()
             encrypted_message.insert(1.0, f'Here is your encrypted message: {token_converted}')
         encrypyB1 = Button(window1, bg="#282830", font="Helvetica 20 bold italic", relief=GROOVE, borderwidth=2, fg="#e92d2d", text="Encrypt", command=encrypt)
