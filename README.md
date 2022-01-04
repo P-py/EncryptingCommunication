@@ -60,7 +60,7 @@ pip3 install -r requirements.txt
 
 ## Exemplo de uso
 
-![](./header0.png)
+![](https://github.com/P-py/EncryptingCommunication/blob/main/header0.PNG?raw=true)
 
 ## Configuração para Desenvolvimento
 
