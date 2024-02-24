@@ -3,6 +3,8 @@
 
 EncryptingCommunication é um programa Python para criptografia que se baseada no método de SHA - Secure Hashinh Algorithm - para gerar Hashs baseadas em mensagens a partir do input do usuário, que só podem ser decodificadas utilizando a salt e master-key do mesmo. Para entender um pouco melhor sobre como o método [PBKDF2-SHA256](https://docs.python.org/3/library/hashlib.html) funciona você pode assistir um desses dois vídeos do canal Computerphile: [SHA: Secure Hashing Algorithm - Computerphile](https://www.youtube.com/watch?v=DMtFhACPnTY) e [Hashing Algorithms and Security - Computerphile](https://www.youtube.com/watch?v=b4b8ktEV4Bg).
 
+##### DESCONTINUADO - Esse repositório não receberá novas atualizações.
+
 ## Instalação
 
 ### Linux:
